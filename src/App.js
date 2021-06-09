@@ -1,10 +1,21 @@
 import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div>
-      <CardPage />
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path='/' exact component={CardPage} />
+        <Route path='/about' component={CardPage} />
+        <Route path='/events' component={CardPage} />
+        <Route path='/annual' component={CardPage} />
+        <Route path='/team' component={CardPage} />
+        <Route path='/blogs' component={CardPage} />
+        <Route path='/sign-up' component={CardPage} />
+      </Switch>
+    </Router>
   );
 };
 
@@ -36,11 +47,11 @@ const Card = (props) => {
           <img src={props.imgLink || "https://picsum.photos/500/300/"} />
         </div>
         <div className="card_content">
-          <h2 className="card_title">{props.title || "Card Grid Layout"}</h2>
+          <h2 className="card_title">{props.title || "Event Title"}</h2>
           <p className="card_text">
-            {props.description || "Demo of pixel perfect pure CSS simple responsive card grid layout"}
+            {props.description || "Event Description"}
           </p>
-          <button className="btn card_btn">Check it out</button>
+          <button className="btn card_btn">{props.customBtn || "Check out the event"}</button>
         </div>
       </div>
     </li>
