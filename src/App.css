@@ -9,7 +9,7 @@
 }
 
 html {
-  background-color: #ecf9ff;
+  background-color: #1f253d;
 }
 
 body {
@@ -68,6 +68,10 @@ img {
   padding: 1rem;
 }
 
+.title {
+  color: #ffffff;
+  font-size: 40px;
+}
 @media (min-width: 40rem) {
   .cards_item {
     width: 50%;
